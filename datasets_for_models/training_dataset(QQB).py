@@ -106,9 +106,9 @@ class QQBDataset(Dataset):
 
 
 
-#sample_dataset = QQBDataset(csv_file=r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\data_preprocessing\qqb_dataset\qqb_train.csv")
+sample_dataset = QQBDataset(csv_file=r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\data_preprocessing\qqb_dataset\qqb_train.csv")
 
-#img, label = sample_dataset[0]
+img, label = sample_dataset[0]
 
-#print("Image shape:", img.shape)
-#print("Label:", label)
+print("Image shape:", img.shape)
+print("Label:", label)
