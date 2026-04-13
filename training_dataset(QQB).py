@@ -101,3 +101,20 @@ class QQBDataset(Dataset):
         label_tensor = torch.tensor(label, dtype=torch.long)
 
         return image, label_tensor
+    
+
+
+
+import sys
+sys.path.append("C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\data_preprocessing\qqb_dataset\qqb_train.csv")
+
+
+
+from qqb_dataset import QQBDataset
+
+sample_dataset = QQBDataset(csv_file="qqb_train.csv")
+
+img, lbl = sample_dataset[0]   # ← THIS creates img
+
+print("Image shape:", img.shape)
+print("Label:", lbl)
