@@ -105,16 +105,10 @@ class QQBDataset(Dataset):
 
 
 
-import sys
-sys.path.append("C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\data_preprocessing\qqb_dataset\qqb_train.csv")
 
+#sample_dataset = QQBDataset(csv_file=r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\data_preprocessing\qqb_dataset\qqb_train.csv")
 
+#img, label = sample_dataset[0]
 
-from qqb_dataset import QQBDataset
-
-sample_dataset = QQBDataset(csv_file="qqb_train.csv")
-
-img, lbl = sample_dataset[0]   # ← THIS creates img
-
-print("Image shape:", img.shape)
-print("Label:", lbl)
+#print("Image shape:", img.shape)
+#print("Label:", label)
