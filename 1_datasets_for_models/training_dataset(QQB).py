@@ -20,13 +20,12 @@ def build_default_transform(
     augment: bool = False,
 ) -> transforms.Compose:
     """
-    Build a default torchvision transform pipeline.
+    The function build a default torch transformer.
 
     Args:
-        image_size:  Target (height, width).
-        normalize:   If True, apply ImageNet mean/std normalization after ToTensor.
-                     Required when using pretrained backbones.
-        augment:     If True, add basic training-time augmentations (flip, color jitter).
+        image_size:  Target (height, width)
+        normalize:   Apply ImageNet mean/std normalization                     
+        augment:     Add basic training-time augmentations (flip, color jitter).
                      Set to True for the training split, False for validation/test.
     """
     ops = []
