@@ -26,7 +26,7 @@ def build_default_transform(
         image_size:  Target (height, width)
         normalize:   Apply ImageNet mean/std normalization                     
         augment:     Add basic training-time augmentations (flip, color jitter).
-                     Set to True for the training split, False for validation/test.
+                     Set to True for the training split, False for validation/test\.
     """
     ops = []
 
