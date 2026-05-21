@@ -1,0 +1,877 @@
+{
+  "model": "A",
+  "description": "Pure end-to-end ML \u2014 RGB only, ResNet-50",
+  "test_set": "xBD",
+  "metrics": {
+    "loss": 1.017679,
+    "f1": 0.2373,
+    "precision": 0.2121,
+    "recall": 0.2692,
+    "auc": 0.4975,
+    "tp": 7,
+    "fp": 26,
+    "tn": 68,
+    "fn": 19,
+    "n_samples": 120,
+    "n_damaged": 26,
+    "n_intact": 94
+  },
+  "per_disaster": {
+    "mexico-earthquake": {
+      "loss": 1.017679,
+      "f1": 0.2373,
+      "precision": 0.2121,
+      "recall": 0.2692,
+      "auc": 0.4975,
+      "tp": 7,
+      "fp": 26,
+      "tn": 68,
+      "fn": 19,
+      "n_samples": 120,
+      "n_damaged": 26,
+      "n_intact": 94
+    }
+  },
+  "per_sample": [
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000055_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.081161,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000021_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.704495,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000067_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.549102,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000136_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.08082,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000046_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.122455,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000159_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.20361,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000079_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.469212,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000132_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.196054,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000108_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.001355,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000043_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.903287,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000144_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.002431,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000033_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.028631,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000000_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.904277,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000100_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.949175,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000184_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.022084,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000179_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.011142,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000126_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.039453,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000122_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.348439,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000011_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.196801,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000110_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.002898,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000128_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.862756,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000120_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.924454,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000023_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.394544,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000037_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.214379,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000017_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.506836,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000001_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.008425,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000138_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.894485,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000083_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.122018,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000031_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.137256,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000185_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.823324,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000143_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.788257,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000072_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.003679,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000166_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.001922,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000114_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.001201,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000164_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.35381,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000085_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.971728,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000142_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.013426,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000092_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.261691,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000030_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.193118,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000024_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.629586,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000035_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.447538,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000096_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.002884,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000003_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.96239,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000027_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.26079,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000141_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.000701,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000004_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.072645,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000107_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.941398,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000070_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.114398,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000044_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.006539,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000112_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.956127,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000084_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.160436,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000078_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.003701,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000082_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.007295,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000186_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.003128,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000089_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.539945,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000182_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.077682,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000049_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.007063,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000155_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.000574,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000101_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.002324,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000029_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.688912,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000154_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.331562,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000034_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.000166,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000160_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.447716,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000172_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.013081,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000093_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.001689,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000176_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.000677,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000032_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.011264,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000173_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.896614,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000039_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.202996,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000047_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.646847,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000020_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.541117,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000127_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.964269,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000140_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.763918,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000057_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.148105,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000102_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.460069,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000118_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.035627,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000075_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.012982,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000053_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.103911,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000158_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.958806,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000002_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.346039,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000129_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.364483,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000066_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.07062,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000074_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.706431,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000009_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.480791,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000153_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.167896,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000015_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.006405,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000119_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.00069,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000007_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.095391,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000087_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.031826,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000168_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.113495,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000041_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.00301,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000105_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.30395,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000068_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.073857,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000064_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.911825,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000048_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.013658,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000098_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.733591,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000042_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.220805,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000181_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.060918,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000191_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.080159,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000171_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.926307,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000104_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.039823,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000151_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.097457,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000018_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.039018,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000177_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.072546,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000111_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.129433,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000059_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.161559,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000125_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.67422,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000150_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.019739,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000146_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.027382,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000115_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.042077,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000103_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.005451,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000152_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.005714,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000086_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.591505,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000052_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.073173,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000088_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.890776,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000008_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.144661,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000040_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.600122,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000148_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.012032,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000019_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.385963,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000013_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.86876,
+      "disaster": "mexico-earthquake"
+    }
+  ]
+}

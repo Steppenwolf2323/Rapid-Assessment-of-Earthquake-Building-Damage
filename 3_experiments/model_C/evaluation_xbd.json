@@ -1,0 +1,2333 @@
+{
+  "model": "C",
+  "description": "Physics-guided \u2014 dual-branch shadow comparison",
+  "test_set": "xBD",
+  "metrics": {
+    "loss": 1.341086,
+    "f1": 0.5103,
+    "precision": 0.4065,
+    "recall": 0.685,
+    "auc": 0.5437,
+    "tp": 87,
+    "fp": 127,
+    "tn": 70,
+    "fn": 40,
+    "n_samples": 324,
+    "n_damaged": 127,
+    "n_intact": 197
+  },
+  "per_disaster": {
+    "mexico-earthquake": {
+      "loss": 1.341086,
+      "f1": 0.3359,
+      "precision": 0.2095,
+      "recall": 0.8462,
+      "auc": 0.5205,
+      "tp": 22,
+      "fp": 83,
+      "tn": 11,
+      "fn": 4,
+      "n_samples": 120,
+      "n_damaged": 26,
+      "n_intact": 94
+    },
+    "palu-tsunami": {
+      "loss": 1.341086,
+      "f1": 0.6875,
+      "precision": 0.7051,
+      "recall": 0.6707,
+      "auc": 0.3953,
+      "tp": 55,
+      "fp": 23,
+      "tn": 6,
+      "fn": 27,
+      "n_samples": 111,
+      "n_damaged": 82,
+      "n_intact": 29
+    },
+    "sunda-tsunami": {
+      "loss": 1.341086,
+      "f1": 0.4,
+      "precision": 0.3226,
+      "recall": 0.5263,
+      "auc": 0.6188,
+      "tp": 10,
+      "fp": 21,
+      "tn": 53,
+      "fn": 9,
+      "n_samples": 93,
+      "n_damaged": 19,
+      "n_intact": 74
+    }
+  },
+  "per_sample": [
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000055_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.338879,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000021_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.984203,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000067_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.985712,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000013_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.160765,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000136_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.780773,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000046_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.69203,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000007_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.388541,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000159_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.582366,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000097_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.99274,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000079_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.998132,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000132_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.775707,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000108_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.428226,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000023_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.789462,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000043_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.740011,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000144_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.870831,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000155_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.409889,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000142_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.460249,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000033_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.764578,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000031_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.001878,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000008_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.048414,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000175_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.950699,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000103_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.49464,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000059_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.955408,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000130_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.416724,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000000_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.986651,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000100_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.949678,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000184_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.216414,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000118_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.744003,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000087_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.314414,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000187_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.448002,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000143_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.547015,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000179_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.245132,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000065_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.820822,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000126_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.84494,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000153_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.471643,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000122_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.944768,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000076_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.908155,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000042_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.408844,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000011_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.8701,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000110_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.596911,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000128_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.85066,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000055_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.987324,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000160_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.822646,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000076_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.62935,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000058_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.010483,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000157_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.586162,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000120_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.969962,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000134_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.997292,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000079_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.596528,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000022_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.264936,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000108_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.025122,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000023_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.957688,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000010_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.194689,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000107_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.086488,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000109_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.430575,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000128_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.42547,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000122_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.986462,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000057_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.262851,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000005_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.027706,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000037_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.931535,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000017_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.991447,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000033_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.081631,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000083_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.107814,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000001_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.934938,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000092_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.61056,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000105_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.664067,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000138_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.991951,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000023_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.968021,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000030_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.617529,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000083_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.983879,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000087_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.988182,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000112_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.3849,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000020_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.547982,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000048_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.418553,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000025_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.234201,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000189_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.369104,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000031_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.578692,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000134_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.307136,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000185_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.902527,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000058_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.904429,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000037_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.200532,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000006_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.926285,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000143_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.992544,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000169_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.663443,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000016_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.30488,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000100_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.773012,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000072_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.572971,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000082_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.038375,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000179_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.939361,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000009_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.946244,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000166_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.644881,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000036_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.01401,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000028_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.636583,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000108_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.569934,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000064_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.957173,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000078_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.031428,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000114_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.634662,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000164_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.572168,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000086_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.528752,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000128_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.06889,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000085_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.962625,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000052_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.669072,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000019_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.886498,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000164_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.892885,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000142_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.502123,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000092_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.804617,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000030_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.903156,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000024_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.984774,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000096_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.8072,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000024_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.964407,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000024_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.004703,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000073_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.297517,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000035_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.939886,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000025_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.029595,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000133_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.557949,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000147_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.006157,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000119_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.210417,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000045_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.991272,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000096_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.910523,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000104_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.04459,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000003_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.999512,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000021_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.188781,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000027_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.949046,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000014_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.076319,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000141_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.788318,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000100_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.242388,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000004_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.897004,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000107_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.987308,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000099_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.983758,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000029_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.053834,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000049_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.861114,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000040_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.853746,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000098_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.052127,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000102_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.436121,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000070_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.844646,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000044_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.130843,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000112_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.961374,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000136_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.435752,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000125_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.998499,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000084_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.705369,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000107_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.295536,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000078_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.534798,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000047_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.845516,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000082_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.806769,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000186_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.445939,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000089_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.905079,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000182_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.403412,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000049_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.729601,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000051_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.298157,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000022_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.639559,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000155_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.869843,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000101_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.709501,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000029_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.988534,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000154_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.984986,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000034_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.314212,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000152_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.998716,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000174_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.990862,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000166_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.778951,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000160_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.524573,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000172_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.295738,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000093_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.614249,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000176_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.050089,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000004_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.295151,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000032_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.694514,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000126_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.935224,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000173_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.994376,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000039_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.769601,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000056_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.608408,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000115_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.98971,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000047_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.801674,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000106_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.787071,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000035_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.014435,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000132_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.463917,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000099_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.614466,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000020_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.673074,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000127_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.809956,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000140_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.989359,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000057_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.722528,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000011_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.431967,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000066_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.801181,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000148_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.531018,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000095_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.627407,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000026_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.310919,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000135_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.749371,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000061_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.602523,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000102_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.522891,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000018_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.376442,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000046_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.571991,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000034_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.695671,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000118_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.872289,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000075_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.398215,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000015_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.719287,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000053_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.955062,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000158_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.603178,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000068_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.03515,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000002_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.929548,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000050_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.350819,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000129_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.982318,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000072_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.992097,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000054_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.009271,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000141_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.049094,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000168_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.993193,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000066_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.379367,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000032_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.039723,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000182_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.99264,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000074_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.962201,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000034_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.29664,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000001_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.90709,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000132_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.623929,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000110_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.030154,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000137_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.995844,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000009_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.915398,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000153_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.682559,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000111_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.31977,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000000_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.76642,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000015_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.466065,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000119_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.564441,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000007_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.984422,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000047_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.220843,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000121_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.631318,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000084_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.749627,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000087_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.881776,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000060_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.127288,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000042_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.290551,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000098_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.99491,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000016_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.993911,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000188_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.935171,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000168_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.567491,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000131_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.925848,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000033_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.026749,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000069_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.962328,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000030_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.358255,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000006_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.329978,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000041_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.855867,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000041_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.72086,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000071_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.528409,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000105_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.693026,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000053_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.23473,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000161_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.69238,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000068_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.924073,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000085_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.03791,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000002_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.975305,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000064_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.988136,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000154_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.442751,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000048_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.986674,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000177_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.934128,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000012_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.086408,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000101_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.824797,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000123_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.953463,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000090_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.894421,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000057_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.045387,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000020_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.101907,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000098_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.986896,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000053_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.556272,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000084_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.996862,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000042_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.986767,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000145_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.26752,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000119_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.980776,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000003_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.273122,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000118_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.99918,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000044_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.948398,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000181_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.467167,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000191_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.930084,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000140_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.980778,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000067_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.968612,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000178_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.992326,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000171_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.932246,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000104_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.802557,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000056_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.019931,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000005_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.671598,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000151_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.995682,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000083_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.955861,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000018_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.952125,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000073_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.13452,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000002_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.086721,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000064_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.181087,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000120_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.503543,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000177_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.835528,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000045_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.613051,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000088_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.413206,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000146_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.284594,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000069_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.033672,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000090_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.795141,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000051_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.497055,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000019_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.024809,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000140_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.083582,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000106_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.8307,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000111_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.636925,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000183_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.995848,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000059_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.855995,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000171_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.682617,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000054_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.984063,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000074_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.025118,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000065_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.179752,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000125_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.991967,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000150_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.103463,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000191_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.780386,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000146_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.954708,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000115_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.956932,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000080_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.030537,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000063_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.8054,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000043_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.340985,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000068_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.986949,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000027_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.203218,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000103_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.804512,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000109_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.930562,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000152_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.849031,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000136_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.653462,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000074_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.9612,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000167_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.983149,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000086_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.988038,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000052_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.998879,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000088_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.933918,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000008_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.864582,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000139_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.012189,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000001_post_disaster.png",
+      "label": 1,
+      "pred": 1,
+      "prob": 0.679408,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000040_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.914925,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000195_post_disaster.png",
+      "label": 1,
+      "pred": 0,
+      "prob": 0.43931,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000026_post_disaster.png",
+      "label": 0,
+      "pred": 0,
+      "prob": 0.003059,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000148_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.996215,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_tier3\\tier3\\images\\sunda-tsunami_00000103_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.884236,
+      "disaster": "sunda-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000019_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.946633,
+      "disaster": "mexico-earthquake"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\palu-tsunami_00000101_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.677802,
+      "disaster": "palu-tsunami"
+    },
+    {
+      "path": "C:\\Users\\zanca\\OneDrive\\Desktop\\Vrij Unversiteit\\extra_year\\Thesis\\xBD_train_images_labels_targets\\train\\images\\mexico-earthquake_00000013_post_disaster.png",
+      "label": 0,
+      "pred": 1,
+      "prob": 0.914834,
+      "disaster": "mexico-earthquake"
+    }
+  ]
+}
