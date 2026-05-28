@@ -37,7 +37,7 @@ import config_B as cfg
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 BASE          = Path(r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage")
-XBD_TEST_CSV = BASE / "0_data_preprocessing" / "xbd_dataset" / "xbd_test_earthquake_only.csv"
+XBD_TEST_CSV = BASE / "0_data_preprocessing/xbd_dataset/xbd_test_buildings.csv"
 MODEL_WEIGHTS = BASE / "2_models_trainings" / "model_B" / "outputs" / "best_stage2.pt"
 OUTPUT_FILE = BASE / "3_experiments" / "model_B" / "evaluation_xbd_earthquake_only.json"
 
