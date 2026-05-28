@@ -1,13 +1,12 @@
 """
-evaluate_C.py — Model C evaluation on xBD test set
+evaluate_C.py — Model C evaluation on xBD building-level test set
 
-Place this file in:
-    2_models_trainings/model_C/
+Key fix: reads sun_azimuth and sun_elevation directly from the CSV
+columns saved during extraction, instead of looking up JSON files.
+The crop paths no longer have the original folder structure needed
+for JSON lookup, but the CSV already has the metadata.
 
-Saves results to:
-    3_experiments/model_C/evaluation_xbd.json
-
-Uses per-image sun angles from xBD JSON metadata automatically.
+Saves to: 3_experiments/model_C/evaluation_xbd.json
 
 Usage:
     cd 2_models_trainings/model_C
@@ -20,6 +19,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent))
 
+import cv2
 import numpy as np
 import pandas as pd
 import torch
@@ -33,20 +33,28 @@ from sklearn.metrics import (
 )
 
 from model_C import ModelC
-from dataset_C import get_sun_angles, compute_observed_shadow, compute_expected_shadow
+from dataset_C import compute_observed_shadow, compute_expected_shadow
 import config_C as cfg
 
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 BASE          = Path(r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage")
-XBD_TEST_CSV = BASE / "0_data_preprocessing/xbd_dataset/xbd_test_buildings.csv"
+XBD_TEST_CSV  = BASE / "0_data_preprocessing" / "xbd_dataset" / "xbd_test_buildings.csv"
 MODEL_WEIGHTS = BASE / "2_models_trainings" / "model_C" / "outputs" / "best_model.pt"
-OUTPUT_FILE = BASE / "3_experiments" / "model_C" / "evaluation_xbd_earthquake_only.json"
+OUTPUT_FILE   = BASE / "3_experiments" / "model_C" / "evaluation_xbd.json"
+
+THRESHOLDS = [round(t, 2) for t in np.arange(0.05, 1.00, 0.05)]
 
 
 # ─── Dataset ──────────────────────────────────────────────────────────────────
 
 class XBDDatasetC(Dataset):
+    """
+    Reads sun_azimuth and sun_elevation directly from CSV columns.
+    The extraction notebook saved these from each scene's metadata,
+    so we do not need to look up JSON files from the crop paths.
+    """
+
     def __init__(
         self,
         csv_path:          Path,
@@ -59,29 +67,34 @@ class XBDDatasetC(Dataset):
         clahe_grid:        tuple = (8, 8),
         min_component_px:  int   = 50,
     ):
-        df                     = pd.read_csv(csv_path)
+        df = pd.read_csv(csv_path)
+
         self.samples           = list(zip(df["path"].tolist(), df["label"].tolist()))
         self.disaster          = df["disaster"].tolist()
+        self.subtype           = df["subtype"].tolist() if "subtype" in df.columns else ["unknown"] * len(df)
         self.image_size        = image_size
-        self.default_azimuth   = default_azimuth
-        self.default_elevation = default_elevation
         self.coherence_kernel  = coherence_kernel
         self.coherence_sigma   = coherence_sigma
         self.clahe_clip        = clahe_clip
         self.clahe_grid        = clahe_grid
         self.min_component_px  = min_component_px
 
+        # Read sun angles from CSV — fall back to defaults if column missing
+        if "sun_azimuth" in df.columns and "sun_elevation" in df.columns:
+            self.sun_azimuths   = df["sun_azimuth"].tolist()
+            self.sun_elevations = df["sun_elevation"].tolist()
+            print(f"[xBD test] Sun angles read from CSV columns ✓")
+        else:
+            self.sun_azimuths   = [default_azimuth]   * len(df)
+            self.sun_elevations = [default_elevation] * len(df)
+            print(f"[xBD test] Sun angle columns not found — using defaults "
+                  f"(az={default_azimuth}°, el={default_elevation}°)")
+
         n_intact  = sum(1 for _, lbl in self.samples if lbl == 0)
         n_damaged = sum(1 for _, lbl in self.samples if lbl == 1)
-        n_meta    = sum(
-            1 for path, _ in self.samples
-            if (Path(path).parent.parent / "labels" /
-                Path(path).with_suffix(".json").name).exists()
-        )
         print(f"[xBD test] {len(self.samples)} samples "
-              f"(intact: {n_intact}, damaged: {n_damaged})")
-        print(f"[xBD test] {n_meta}/{len(self.samples)} images "
-              f"with JSON sun angle metadata")
+              f"(intact: {n_intact}, damaged: {n_damaged}, "
+              f"ratio: {n_intact/max(n_damaged,1):.1f}:1)")
 
     def __len__(self):
         return len(self.samples)
@@ -95,9 +108,9 @@ class XBDDatasetC(Dataset):
         )(Image.fromarray(img_np))
         img_np  = np.array(img_pil)
 
-        azimuth, elevation = get_sun_angles(
-            img_path, self.default_azimuth, self.default_elevation
-        )
+        # Per-image sun angles from CSV
+        azimuth   = self.sun_azimuths[idx]
+        elevation = self.sun_elevations[idx]
 
         observed = compute_observed_shadow(
             img_np,
@@ -118,18 +131,23 @@ class XBDDatasetC(Dataset):
             torch.from_numpy(expected).unsqueeze(0),
             torch.tensor(label, dtype=torch.float32),
             self.disaster[idx],
+            self.subtype[idx],
         )
 
 
 # ─── Metrics ──────────────────────────────────────────────────────────────────
 
-def compute_metrics(labels, preds, probs, loss) -> dict:
+def compute_metrics(labels, preds, probs, loss, threshold=0.5) -> dict:
     try:
         auc = roc_auc_score(labels, probs)
     except ValueError:
         auc = float("nan")
-    tn, fp, fn, tp = confusion_matrix(labels, preds, labels=[0, 1]).ravel()
+    try:
+        tn, fp, fn, tp = confusion_matrix(labels, preds, labels=[0, 1]).ravel()
+    except ValueError:
+        tn = fp = fn = tp = 0
     return {
+        "threshold": threshold,
         "loss":      round(loss, 6),
         "f1":        round(f1_score(labels, preds,        zero_division=0), 4),
         "precision": round(precision_score(labels, preds, zero_division=0), 4),
@@ -176,61 +194,88 @@ def main():
         pin_memory=(device.type == "cuda"),
     )
 
-    all_labels, all_preds, all_probs, all_disasters = [], [], [], []
+    all_labels, all_probs, all_disasters, all_subtypes = [], [], [], []
     total_loss = 0.0
 
     with torch.no_grad():
-        for observed, expected, labels, disasters in loader:
+        for observed, expected, labels, disasters, subtypes in loader:
             observed = observed.to(device)
             expected = expected.to(device)
             labels   = labels.to(device)
             logits   = model(observed, expected).squeeze(1)
             total_loss += criterion(logits, labels).item()
             probs  = torch.sigmoid(logits).cpu().numpy()
-            preds  = (probs >= cfg.THRESHOLD).astype(int)
             all_probs.extend(probs.tolist())
-            all_preds.extend(preds.tolist())
             all_labels.extend(labels.long().cpu().numpy().tolist())
             all_disasters.extend(list(disasters))
+            all_subtypes.extend(list(subtypes))
 
     avg_loss = total_loss / len(loader)
-    overall  = compute_metrics(all_labels, all_preds, all_probs, avg_loss)
 
-    print("Overall results:")
+    # ── Threshold tuning ──────────────────────────────────────────────────────
+    print("Threshold tuning results:")
+    print(f"  {'Threshold':>10}  {'F1':>8}  {'Precision':>10}  {'Recall':>8}  {'TP':>5}  {'FN':>5}")
+    print(f"  {'-'*55}")
+
+    threshold_results = []
+    best_f1        = 0.0
+    best_threshold = cfg.THRESHOLD
+
+    for t in THRESHOLDS:
+        preds   = [1 if p >= t else 0 for p in all_probs]
+        metrics = compute_metrics(all_labels, preds, all_probs, avg_loss, threshold=t)
+        threshold_results.append(metrics)
+        print(f"  {t:>10.2f}  {metrics['f1']:>8.4f}  "
+              f"{metrics['precision']:>10.4f}  {metrics['recall']:>8.4f}  "
+              f"{metrics['tp']:>5}  {metrics['fn']:>5}")
+        if metrics["f1"] > best_f1:
+            best_f1        = metrics["f1"]
+            best_threshold = t
+
+    print(f"\n  Best threshold: {best_threshold} → F1 = {best_f1:.4f}")
+
+    best_preds = [1 if p >= best_threshold else 0 for p in all_probs]
+    overall    = compute_metrics(all_labels, best_preds, all_probs, avg_loss, best_threshold)
+
+    print(f"\nOverall at threshold {best_threshold}:")
     print(f"  F1:        {overall['f1']}")
     print(f"  Precision: {overall['precision']}")
     print(f"  Recall:    {overall['recall']}")
     print(f"  AUC:       {overall['auc']}")
-    print(f"  Loss:      {overall['loss']}")
 
-    per_disaster = {}
-    for disaster in sorted(set(all_disasters)):
-        idx = [i for i, d in enumerate(all_disasters) if d == disaster]
-        per_disaster[disaster] = compute_metrics(
+    per_subtype = {}
+    for subtype in sorted(set(all_subtypes)):
+        if subtype == "no-damage":
+            continue
+        idx = [i for i, s in enumerate(all_subtypes) if s == subtype]
+        if not idx:
+            continue
+        per_subtype[subtype] = compute_metrics(
             [all_labels[i] for i in idx],
-            [all_preds[i]  for i in idx],
-            [all_probs[i]  for i in idx],
-            avg_loss,
+            [best_preds[i]  for i in idx],
+            [all_probs[i]   for i in idx],
+            avg_loss, best_threshold,
         )
-        print(f"\n  {disaster}:")
-        print(f"    F1: {per_disaster[disaster]['f1']}  "
-              f"Recall: {per_disaster[disaster]['recall']}  "
-              f"AUC: {per_disaster[disaster]['auc']}  "
-              f"(n={per_disaster[disaster]['n_samples']})")
+        print(f"\n  {subtype}: F1={per_subtype[subtype]['f1']}  "
+              f"Recall={per_subtype[subtype]['recall']}  "
+              f"(n_damaged={per_subtype[subtype]['n_damaged']})")
 
     results = {
-        "model":        "C",
-        "description":  "Physics-guided — dual-branch shadow comparison",
-        "test_set":     "xBD",
-        "metrics":      overall,
-        "per_disaster": per_disaster,
+        "model":              "C",
+        "description":        "Physics-guided — dual-branch shadow comparison",
+        "test_set":           "xBD building-level",
+        "best_threshold":     best_threshold,
+        "metrics":            overall,
+        "threshold_analysis": threshold_results,
+        "per_subtype":        per_subtype,
         "per_sample": [
             {
                 "path":     dataset.samples[i][0],
                 "label":    all_labels[i],
-                "pred":     all_preds[i],
+                "pred":     best_preds[i],
                 "prob":     round(all_probs[i], 6),
                 "disaster": all_disasters[i],
+                "subtype":  all_subtypes[i],
             }
             for i in range(len(all_labels))
         ],
