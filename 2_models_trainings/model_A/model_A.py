@@ -28,19 +28,9 @@ class ModelA(nn.Module):
     def __init__(self, fc_size: int = 512, dropout: float = 0.5):
         super().__init__()
 
-        # ── Backbone ──────────────────────────────────────────────────────────
-        # Load ResNet-50 with ImageNet weights.
-        # We remove the original final FC layer (resnet.fc) and keep everything
-        # up to and including avgpool, which already performs Global Average
-        # Pooling and outputs shape [B, 2048, 1, 1].
+        
         resnet = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V1)
-        self.backbone = nn.Sequential(*list(resnet.children())[:-1])
-        # Output: [B, 2048, 1, 1]
-
-        # ── Classification head ───────────────────────────────────────────────
-        # Flatten collapses [B, 2048, 1, 1] → [B, 2048]
-        # Single FC layer keeps the head simple, reducing overfitting risk
-        # on QQB's small dataset (~4 000 images).
+        self.backbone = nn.Sequential(*list(resnet.children())[:-1])        
         self.head = nn.Sequential(
             nn.Flatten(),                   # [B, 2048, 1, 1] → [B, 2048]
             nn.Linear(2048, fc_size),       # [B, 2048] → [B, 512]
@@ -49,7 +39,6 @@ class ModelA(nn.Module):
             nn.Linear(fc_size, 1),          # [B, 512]  → [B, 1]  (logit)
         )
 
-    # ── Forward ───────────────────────────────────────────────────────────────
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         Args:
@@ -60,7 +49,6 @@ class ModelA(nn.Module):
         features = self.backbone(x)   # [B, 2048, 1, 1]
         return self.head(features)    # [B, 1]
 
-    # ── Inference helper ──────────────────────────────────────────────────────
     @torch.no_grad()
     def predict(self, x: torch.Tensor, threshold: float = 0.5) -> torch.Tensor:
         """
@@ -71,7 +59,6 @@ class ModelA(nn.Module):
         probs = torch.sigmoid(self.forward(x))   # [B, 1]
         return (probs >= threshold).long()
 
-    # ── Fine-tuning helpers ───────────────────────────────────────────────────
     def freeze_backbone(self):
         """Stage 1: stop backbone gradients, train only the head."""
         for param in self.backbone.parameters():
@@ -97,7 +84,6 @@ class ModelA(nn.Module):
             {"params": self.head.parameters(),     "lr": lr_head},
         ]
 
-    # ── Summary ───────────────────────────────────────────────────────────────
     def count_parameters(self) -> dict:
         backbone_params = sum(p.numel() for p in self.backbone.parameters())
         head_params     = sum(p.numel() for p in self.head.parameters())

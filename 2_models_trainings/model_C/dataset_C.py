@@ -32,7 +32,6 @@ from torchvision import transforms
 from PIL import Image
 
 
-# ── Sun angle helpers ─────────────────────────────────────────────────────────
 
 def get_sun_angles(
     image_path:        str,
@@ -67,7 +66,6 @@ def get_sun_angles(
     return default_azimuth, default_elevation
 
 
-# ── Shadow map generation ─────────────────────────────────────────────────────
 
 def compute_observed_shadow(
     img_np:           np.ndarray,
@@ -148,7 +146,6 @@ def compute_expected_shadow(
     return coherence.astype(np.float32)
 
 
-# ── Dataset ───────────────────────────────────────────────────────────────────
 
 class QQBDatasetC(Dataset):
     """
@@ -188,7 +185,6 @@ class QQBDatasetC(Dataset):
         self.clahe_tile_grid   = clahe_tile_grid
         self.min_component_px  = min_component_px
 
-        # ── Load CSV ─────────────────────────────────────────────────────────
         csv_path = Path(csv_path)
         if not csv_path.exists():
             raise FileNotFoundError(f"CSV not found: {csv_path}")
@@ -202,7 +198,6 @@ class QQBDatasetC(Dataset):
         n_intact  = sum(1 for _, lbl in self.samples if lbl == 0)
         n_damaged = sum(1 for _, lbl in self.samples if lbl == 1)
 
-        # Count how many images have JSON metadata available
         n_with_meta = sum(
             1 for path, _ in self.samples
             if (Path(path).parent.parent / "labels" /
@@ -216,7 +211,6 @@ class QQBDatasetC(Dataset):
               f"{len(self.samples) - n_with_meta} using config defaults "
               f"(az={default_azimuth}°, el={default_elevation}°)")
 
-        # ── Spatial augmentation ─────────────────────────────────────────────
         self.spatial_aug = self._build_spatial_aug(split, augment_cfg or {})
 
     def _build_spatial_aug(self, split, cfg):
@@ -238,8 +232,6 @@ class QQBDatasetC(Dataset):
     def __getitem__(self, idx):
         img_path, label = self.samples[idx]
 
-        # ── Load image ───────────────────────────────────────────────────────
-        # QQB: .npy files · xBD: .png files
         p = Path(img_path)
         if p.suffix == ".png":
             img_np = np.array(Image.open(p).convert("RGB"))
@@ -249,23 +241,20 @@ class QQBDatasetC(Dataset):
 
         img_pil = Image.fromarray(img_np, mode="RGB")
 
-        # ── Resize ───────────────────────────────────────────────────────────
         img_pil = transforms.Resize((self.image_size, self.image_size))(img_pil)
 
-        # ── Spatial augmentation ─────────────────────────────────────────────
         if self.spatial_aug is not None:
             img_pil = self.spatial_aug(img_pil)
 
         img_np_aug = np.array(img_pil)
 
-        # ── Resolve sun angles for this specific image ────────────────────────
         azimuth, elevation = get_sun_angles(
             img_path,
             self.default_azimuth,
             self.default_elevation,
         )
 
-        # ── Branch 1: observed shadow mask ────────────────────────────────────
+        # Branch 1: observed shadow mask
         observed = compute_observed_shadow(
             img_np_aug,
             clahe_clip       = self.clahe_clip_limit,
@@ -273,7 +262,7 @@ class QQBDatasetC(Dataset):
             min_component_px = self.min_component_px,
         )
 
-        # ── Branch 2: expected shadow map ─────────────────────────────────────
+        # Branch 2: expected shadow map 
         expected = compute_expected_shadow(
             img_np_aug,
             sun_azimuth_deg   = azimuth,
@@ -282,13 +271,12 @@ class QQBDatasetC(Dataset):
             smooth_sigma      = self.coherence_sigma,
         )
 
-        # ── Tensors [1, H, W] ─────────────────────────────────────────────────
+        # Tensors [1, H, W]
         observed_t = torch.from_numpy(observed).unsqueeze(0)
         expected_t = torch.from_numpy(expected).unsqueeze(0)
 
         return observed_t, expected_t, torch.tensor(label, dtype=torch.float32)
 
-    # ── Class imbalance ───────────────────────────────────────────────────────
     def get_sample_weights(self) -> torch.Tensor:
         labels    = [lbl for _, lbl in self.samples]
         n_intact  = labels.count(0)

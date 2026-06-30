@@ -11,7 +11,7 @@ from torchvision import transforms
 from typing import Callable, Optional
 
 
-# ImageNet stats — same as QQBDataset so both datasets are compatible
+# ImageNet stats are the same as QQBDataset so both datasets are compatible
 # with the same pretrained backbone
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD  = [0.229, 0.224, 0.225]
@@ -118,9 +118,7 @@ class XBDDataset(Dataset):
             augment=augment,
         )
 
-    # ------------------------------------------------------------------
     # Dataset protocol
-    # ------------------------------------------------------------------
 
     def __len__(self) -> int:
         return len(self.df)
@@ -144,7 +142,7 @@ class XBDDataset(Dataset):
         # 1. Load PNG as PIL Image (already HWC uint8 RGB)
         image_pil = self._load_png_image(file_path)
 
-        # 2. Optional physics / masking pre-processing (Model B / C hook)
+        # 2. Optional physics / masking pre-processing (Model B / C )
         if self.pre_transform is not None:
             image_pil = self.pre_transform(image_pil)
 
@@ -160,9 +158,7 @@ class XBDDataset(Dataset):
 
         return image_tensor, label_tensor
 
-    # ------------------------------------------------------------------
     # Internal helpers
-    # ------------------------------------------------------------------
 
     def _load_png_image(self, file_path: str) -> Image.Image:
         """
@@ -175,8 +171,7 @@ class XBDDataset(Dataset):
         """
         img = Image.open(file_path)
 
-        # Ensure RGB — xBD images are RGB, but guard against edge cases
-        # (e.g., an RGBA or palette-mode PNG slipping through)
+        # Ensure RGB
         if img.mode != "RGB":
             img = img.convert("RGB")
 
@@ -197,8 +192,7 @@ class XBDDataset(Dataset):
         which keeps __getitem__ falling back to the plain (image, label) pair.
         """
         # Derive the label path from the image path:
-        # .../images/disaster_00000000_post_disaster.png
-        #   → .../labels/disaster_00000000_post_disaster.json
+        
         label_path = image_path.replace(
             os.sep + "images" + os.sep,
             os.sep + "labels" + os.sep,
@@ -223,11 +217,4 @@ class XBDDataset(Dataset):
 
         return metadata
 
-    @property
-    def has_metadata(self) -> bool:
-        """
-        True when the dataset is configured to load metadata.
-        Mirrors the QQBDataset.has_metadata property so Model C
-        can use the same guard regardless of which dataset it receives.
-        """
-        return self.load_metadata
+    

@@ -21,7 +21,6 @@ import random
 import time
 from pathlib import Path
 
-# ── Make sure Python finds the other files in the same folder ────────────────
 sys.path.append(str(Path(__file__).parent))
 
 import numpy as np
@@ -35,7 +34,7 @@ from dataset_for_models import QQBDataset
 from model_A import ModelA
 
 
-# ── Reproducibility ──────────────────────────────────────────────────────────
+# Reproducibility
 def set_seed(seed: int):
     random.seed(seed)
     np.random.seed(seed)
@@ -43,7 +42,7 @@ def set_seed(seed: int):
     torch.cuda.manual_seed_all(seed)
 
 
-# ── Metrics ───────────────────────────────────────────────────────────────────
+# Metrics 
 def compute_metrics(labels, preds, probs, loss) -> dict:
     try:
         auc = roc_auc_score(labels, probs)
@@ -59,7 +58,7 @@ def compute_metrics(labels, preds, probs, loss) -> dict:
     }
 
 
-# ── Training loop ─────────────────────────────────────────────────────────────
+# Training loop
 def train_one_epoch(model, loader, optimizer, criterion, device) -> dict:
     model.train()
     total_loss = 0.0
@@ -88,7 +87,7 @@ def train_one_epoch(model, loader, optimizer, criterion, device) -> dict:
     return compute_metrics(all_labels, all_preds, all_probs, total_loss / len(loader))
 
 
-# ── Validation loop ───────────────────────────────────────────────────────────
+# Validation loop 
 @torch.no_grad()
 def evaluate(model, loader, criterion, device) -> dict:
     model.eval()
@@ -114,7 +113,7 @@ def evaluate(model, loader, criterion, device) -> dict:
     return compute_metrics(all_labels, all_preds, all_probs, total_loss / len(loader))
 
 
-# ── Stage runner ──────────────────────────────────────────────────────────────
+# Stage runne
 def run_stage(stage_name, model, train_loader, val_loader,
               optimizer, scheduler, criterion, device, n_epochs, output_dir) -> list:
 
@@ -155,7 +154,7 @@ def run_stage(stage_name, model, train_loader, val_loader,
     return history
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# Main 
 def main():
     set_seed(cfg.SEED)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -166,7 +165,7 @@ def main():
     output_dir = cfg.OUTPUT_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # ── Augmentation config ───────────────────────────────────────────────────
+    # Augmentation config
     augment_cfg = {
         "AUGMENT_HFLIP":      cfg.AUGMENT_HFLIP,
         "AUGMENT_VFLIP":      cfg.AUGMENT_VFLIP,
@@ -176,13 +175,13 @@ def main():
         "AUGMENT_SATURATION": cfg.AUGMENT_SATURATION,
     }
 
-    # ── Datasets ──────────────────────────────────────────────────────────────
+    # Datasets
     train_dataset = QQBDataset(cfg.TRAIN_CSV, split="train",
                                image_size=cfg.IMAGE_SIZE, augment_cfg=augment_cfg)
     val_dataset   = QQBDataset(cfg.VAL_CSV,   split="val",
                                image_size=cfg.IMAGE_SIZE)
 
-    # ── WeightedRandomSampler ─────────────────────────────────────────────────
+    # WeightedRandomSampler
     sample_weights = train_dataset.get_sample_weights()
     sampler = WeightedRandomSampler(
         weights     = sample_weights,
@@ -205,7 +204,7 @@ def main():
         pin_memory  = (device.type == "cuda"),
     )
 
-    # ── Model ─────────────────────────────────────────────────────────────────
+    #  Model 
     model = ModelA(fc_size=cfg.FC_SIZE, dropout=cfg.DROPOUT).to(device)
     params = model.count_parameters()
     print(f"\nModel A parameters:")
@@ -216,7 +215,7 @@ def main():
     criterion = nn.BCEWithLogitsLoss()
     history   = {}
 
-    # ── Stage 1: frozen backbone ──────────────────────────────────────────────
+    # Stage 1: frozen backbone 
     model.freeze_backbone()
     print(f"\nStage 1 trainable params: {model.count_parameters()['trainable']:,}")
 
@@ -234,11 +233,9 @@ def main():
         cfg.STAGE1_EPOCHS, output_dir,
     )
 
-    # Load best stage 1 weights before stage 2
     model.load_state_dict(torch.load(output_dir / "best_stage1.pt"))
     print("\nRestored best Stage 1 weights before Stage 2.")
 
-    # ── Stage 2: full fine-tune ───────────────────────────────────────────────
     model.unfreeze_backbone()
     print(f"Stage 2 trainable params: {model.count_parameters()['trainable']:,}")
 
@@ -256,7 +253,7 @@ def main():
         cfg.STAGE2_EPOCHS, output_dir,
     )
 
-    # ── Save history ──────────────────────────────────────────────────────────
+    # Save history 
     history_path = output_dir / "history.json"
     with open(history_path, "w") as f:
         json.dump(history, f, indent=2)

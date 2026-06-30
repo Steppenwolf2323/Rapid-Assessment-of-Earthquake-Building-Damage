@@ -37,7 +37,6 @@ from dataset_C import compute_observed_shadow, compute_expected_shadow
 import config_C as cfg
 
 
-# ─── Paths ────────────────────────────────────────────────────────────────────
 BASE          = Path(r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage")
 XBD_TEST_CSV  = BASE / "0_data_preprocessing" / "xbd_dataset" / "xbd_test_buildings.csv"
 MODEL_WEIGHTS = BASE / "2_models_trainings" / "model_C" / "outputs" / "best_model.pt"
@@ -46,7 +45,6 @@ OUTPUT_FILE   = BASE / "3_experiments" / "model_C" / "evaluation_xbd.json"
 THRESHOLDS = [round(t, 2) for t in np.arange(0.05, 1.00, 0.05)]
 
 
-# ─── Dataset ──────────────────────────────────────────────────────────────────
 
 class XBDDatasetC(Dataset):
     """
@@ -79,7 +77,7 @@ class XBDDatasetC(Dataset):
         self.clahe_grid        = clahe_grid
         self.min_component_px  = min_component_px
 
-        # Read sun angles from CSV — fall back to defaults if column missing
+        # Read sun angles from CSV 
         if "sun_azimuth" in df.columns and "sun_elevation" in df.columns:
             self.sun_azimuths   = df["sun_azimuth"].tolist()
             self.sun_elevations = df["sun_elevation"].tolist()
@@ -108,7 +106,6 @@ class XBDDatasetC(Dataset):
         )(Image.fromarray(img_np))
         img_np  = np.array(img_pil)
 
-        # Per-image sun angles from CSV
         azimuth   = self.sun_azimuths[idx]
         elevation = self.sun_elevations[idx]
 
@@ -135,7 +132,6 @@ class XBDDatasetC(Dataset):
         )
 
 
-# ─── Metrics ──────────────────────────────────────────────────────────────────
 
 def compute_metrics(labels, preds, probs, loss, threshold=0.5) -> dict:
     try:
@@ -161,7 +157,6 @@ def compute_metrics(labels, preds, probs, loss, threshold=0.5) -> dict:
     }
 
 
-# ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -212,7 +207,6 @@ def main():
 
     avg_loss = total_loss / len(loader)
 
-    # ── Threshold tuning ──────────────────────────────────────────────────────
     print("Threshold tuning results:")
     print(f"  {'Threshold':>10}  {'F1':>8}  {'Precision':>10}  {'Recall':>8}  {'TP':>5}  {'FN':>5}")
     print(f"  {'-'*55}")

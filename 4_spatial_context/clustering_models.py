@@ -29,7 +29,7 @@ from sklearn.metrics import (
 )
 
 
-# ─── Load predictions ─────────────────────────────────────────────────────────
+# Load predictions 
 
 def load_predictions(eval_json_path: Path) -> dict:
     """
@@ -51,7 +51,7 @@ def load_predictions(eval_json_path: Path) -> dict:
     }
 
 
-# ─── Load centroids ───────────────────────────────────────────────────────────
+# Load centroids 
 
 def load_centroids(centroids_csv_path: Path) -> dict:
     """
@@ -74,7 +74,7 @@ def load_centroids(centroids_csv_path: Path) -> dict:
     return uid_to_data
 
 
-# ─── Build radius-based neighbourhoods ───────────────────────────────────────
+# Build radius-based neighbourhoods ──────────────────────────────────────
 
 def build_radius_neighbourhoods(
     paths:          list,
@@ -95,7 +95,6 @@ def build_radius_neighbourhoods(
     """
     import pandas as pd
 
-    # Map sample index → uid and centroid data
     index_to_uid  = {}
     index_to_data = {}
     for i, path in enumerate(paths):
@@ -103,7 +102,6 @@ def build_radius_neighbourhoods(
         index_to_uid[i]  = uid
         index_to_data[i] = uid_to_data.get(uid, None)
 
-    # Group indices by scene
     scene_to_indices = {}
     for i, path in enumerate(paths):
         uid  = Path(path).stem
@@ -135,10 +133,7 @@ def build_radius_neighbourhoods(
         if len(valid_indices) < 2:
             continue
 
-        coords_arr = np.array(coords)   # (N, 2)
-
-        # Compute pairwise distances (Euclidean in pixel space)
-        # For N buildings: N×N distance matrix
+        coords_arr = np.array(coords)   
         diff       = coords_arr[:, None, :] - coords_arr[None, :, :]   # (N,N,2)
         dist_matrix = np.sqrt((diff**2).sum(axis=2))                    # (N,N)
 
@@ -157,7 +152,7 @@ def build_radius_neighbourhoods(
     return neighbourhoods, sizes
 
 
-# ─── Adaptive voting ──────────────────────────────────────────────────────────
+# Adaptive voting 
 
 def apply_adaptive_voting(
     probs:                 list,
@@ -209,7 +204,6 @@ def apply_adaptive_voting(
     return new_preds, vote_applied, cluster_stds
 
 
-# ─── Metrics ──────────────────────────────────────────────────────────────────
 
 def compute_metrics(labels, preds, probs) -> dict:
     try:

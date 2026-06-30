@@ -9,7 +9,6 @@ from PIL import Image
 from typing import Callable, Optional
 
 
-# ImageNet stats used by most pretrained CNNs (ResNet, EfficientNet, ViT, ...)
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD  = [0.229, 0.224, 0.225]
 
@@ -105,15 +104,13 @@ class QQBDataset(Dataset):
             augment=augment,
         )
 
-    # ------------------------------------------------------------------
     # Dataset protocol
-    # ------------------------------------------------------------------
+    
 
     def __len__(self) -> int:
         return len(self.df)
 
-    # Columns that are treated as metadata when present in the CSV.
-    # Extend this list as new metadata fields become available.
+ 
     METADATA_COLS = [
         "sun_azimuth",      # degrees clockwise from north
         "sun_elevation",    # degrees above horizon
@@ -132,7 +129,7 @@ class QQBDataset(Dataset):
         # 2. Convert to PIL so torchvision transforms can work on it
         image_pil = Image.fromarray(image_np)
 
-        # 3. Optional physics / masking pre-processing (Model B / C hook)
+        # 3. Optional physics / masking pre-processing (Model B / C)
         if self.pre_transform is not None:
             image_pil = self.pre_transform(image_pil)
 
@@ -170,14 +167,8 @@ class QQBDataset(Dataset):
                     metadata[col] = val
         return metadata
 
-    @property
-    def has_metadata(self) -> bool:
-        """True if the CSV contains at least one recognised metadata column."""
-        return any(col in self.df.columns for col in self.METADATA_COLS)
-
-    # ------------------------------------------------------------------
+  
     # Internal helpers
-    # ------------------------------------------------------------------
 
     def _load_h5_image(self, file_path: str) -> np.ndarray:
         """
@@ -200,7 +191,7 @@ class QQBDataset(Dataset):
 
         image = np.asarray(image)
 
-        # --- Axis ordering ---
+        #  Axis ordering 
         if image.ndim == 3:
             if image.shape[0] == 3 and image.shape[-1] != 3:
                 # CHW  →  HWC
@@ -219,16 +210,13 @@ class QQBDataset(Dataset):
                 f"Unexpected array ndim={image.ndim}, shape={image.shape} in {file_path}"
             )
 
-        # --- dtype: always return uint8 ---
         if image.dtype != np.uint8:
             if image.max() <= 1.0:
-                # Float image in [0, 1] → scale to [0, 255]
                 image = (image * 255).clip(0, 255).astype(np.uint8)
             else:
-                # Already in a larger integer range → cast directly
                 image = image.astype(np.uint8)
 
-        return image                              # HWC, uint8
+        return image                            
 
 
 

@@ -33,10 +33,10 @@ class ModelB(nn.Module):
     def __init__(self, fc_size: int = 512, dropout: float = 0.5):
         super().__init__()
 
-        # ── Load pretrained ResNet-50 ─────────────────────────────────────────
+        # Load pretrained ResNet-50 
         resnet = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V1)
 
-        # ── Modify first conv layer: 3 → 4 input channels ────────────────────
+        # Modify first conv layer: 3 → 4 input channels
         old_conv = resnet.conv1
         # Create new conv with 4 input channels, same everything else
         new_conv = nn.Conv2d(
@@ -50,17 +50,14 @@ class ModelB(nn.Module):
         # Copy pretrained weights for the first 3 channels
         with torch.no_grad():
             new_conv.weight[:, :3, :, :] = old_conv.weight
-            # Initialise 4th channel as mean of the 3 pretrained channels
-            # This is a neutral, non-random starting point that preserves scale
+            
             new_conv.weight[:, 3:4, :, :] = old_conv.weight.mean(dim=1, keepdim=True)
 
         resnet.conv1 = new_conv
 
-        # ── Backbone: everything up to and including avgpool ──────────────────
         self.backbone = nn.Sequential(*list(resnet.children())[:-1])
         # Output: [B, 2048, 1, 1]
 
-        # ── Classification head (identical to Model A) ────────────────────────
         self.head = nn.Sequential(
             nn.Flatten(),
             nn.Linear(2048, fc_size),
@@ -69,7 +66,6 @@ class ModelB(nn.Module):
             nn.Linear(fc_size, 1),
         )
 
-    # ── Forward ───────────────────────────────────────────────────────────────
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         Args:
@@ -80,14 +76,12 @@ class ModelB(nn.Module):
         features = self.backbone(x)
         return self.head(features)
 
-    # ── Inference ─────────────────────────────────────────────────────────────
     @torch.no_grad()
     def predict(self, x: torch.Tensor, threshold: float = 0.5) -> torch.Tensor:
         self.eval()
         probs = torch.sigmoid(self.forward(x))
         return (probs >= threshold).long()
 
-    # ── Fine-tuning helpers ───────────────────────────────────────────────────
     def freeze_backbone(self):
         for param in self.backbone.parameters():
             param.requires_grad = False

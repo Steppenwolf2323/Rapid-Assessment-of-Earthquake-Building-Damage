@@ -31,7 +31,6 @@ from dataset_C import QQBDatasetC
 from model_C import ModelC
 
 
-# ── Reproducibility ──────────────────────────────────────────────────────────
 def set_seed(seed: int):
     random.seed(seed)
     np.random.seed(seed)
@@ -39,7 +38,6 @@ def set_seed(seed: int):
     torch.cuda.manual_seed_all(seed)
 
 
-# ── Metrics ───────────────────────────────────────────────────────────────────
 def compute_metrics(labels, preds, probs, loss) -> dict:
     try:
         auc = roc_auc_score(labels, probs)
@@ -54,7 +52,6 @@ def compute_metrics(labels, preds, probs, loss) -> dict:
     }
 
 
-# ── Training loop ─────────────────────────────────────────────────────────────
 def train_one_epoch(model, loader, optimizer, criterion, device) -> dict:
     model.train()
     total_loss = 0.0
@@ -86,7 +83,6 @@ def train_one_epoch(model, loader, optimizer, criterion, device) -> dict:
     )
 
 
-# ── Validation loop ───────────────────────────────────────────────────────────
 @torch.no_grad()
 def evaluate(model, loader, criterion, device) -> dict:
     model.eval()
@@ -114,7 +110,6 @@ def evaluate(model, loader, criterion, device) -> dict:
     )
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     set_seed(cfg.SEED)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -185,7 +180,6 @@ def main():
         pin_memory  = (device.type == "cuda"),
     )
 
-    # ── Model ─────────────────────────────────────────────────────────────────
     model  = ModelC(
         feature_dim = cfg.CNN_FEATURE_DIM,
         dropout     = 0.5,
@@ -209,7 +203,6 @@ def main():
         optimizer, T_max=cfg.EPOCHS
     )
 
-    # ── Training loop ─────────────────────────────────────────────────────────
     best_f1   = 0.0
     best_path = output_dir / "best_model.pt"
     history   = []
@@ -245,7 +238,6 @@ def main():
     print(f"\n  Best val F1: {best_f1:.4f}")
     print(f"  Model saved → {best_path}")
 
-    # ── Save history ──────────────────────────────────────────────────────────
     history_path = output_dir / "history.json"
     with open(history_path, "w") as f:
         json.dump(history, f, indent=2)

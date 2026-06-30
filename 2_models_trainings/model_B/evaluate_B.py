@@ -31,7 +31,6 @@ from model_B import ModelB
 import config_B as cfg
 
 
-# ─── Paths ────────────────────────────────────────────────────────────────────
 BASE          = Path(r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage")
 XBD_TEST_CSV  = BASE / "0_data_preprocessing" / "xbd_dataset" / "xbd_test_buildings.csv"
 MODEL_WEIGHTS = BASE / "2_models_trainings" / "model_B" / "outputs" / "best_stage2.pt"
@@ -42,8 +41,6 @@ _IMAGENET_STD  = [0.229, 0.224, 0.225]
 
 THRESHOLDS = [round(t, 2) for t in np.arange(0.05, 1.00, 0.05)]
 
-
-# ─── Dataset ──────────────────────────────────────────────────────────────────
 
 class XBDDatasetB(Dataset):
     def __init__(
@@ -104,7 +101,6 @@ class XBDDatasetB(Dataset):
         )
 
 
-# ─── Metrics ──────────────────────────────────────────────────────────────────
 
 def compute_metrics(labels, preds, probs, loss, threshold=0.5) -> dict:
     try:
@@ -130,7 +126,6 @@ def compute_metrics(labels, preds, probs, loss, threshold=0.5) -> dict:
     }
 
 
-# ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -176,7 +171,6 @@ def main():
 
     avg_loss = total_loss / len(loader)
 
-    # ── Threshold tuning ──────────────────────────────────────────────────────
     print("Threshold tuning results:")
     print(f"  {'Threshold':>10}  {'F1':>8}  {'Precision':>10}  {'Recall':>8}  {'TP':>5}  {'FN':>5}")
     print(f"  {'-'*55}")

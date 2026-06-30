@@ -68,7 +68,6 @@ class ShadowCNN(nn.Module):
             nn.ReLU(inplace=True),
         )
 
-        # Global average pooling: [B, feature_dim, H, W] → [B, feature_dim]
         self.gap = nn.AdaptiveAvgPool2d(1)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -96,12 +95,10 @@ class ModelC(nn.Module):
         super().__init__()
         self.feature_dim = feature_dim
 
-        # Two independent CNNs — same architecture, separate weights
         self.branch_observed = ShadowCNN(feature_dim)
         self.branch_expected = ShadowCNN(feature_dim)
 
         # Classification head
-        # Input: feature_dim * 2 (concatenated from both branches)
         combined_dim = feature_dim * 2
         self.head = nn.Sequential(
             nn.Linear(combined_dim, 256),

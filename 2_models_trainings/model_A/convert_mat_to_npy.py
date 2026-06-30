@@ -24,7 +24,6 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-# ── CSV files produced by your data pipeline ─────────────────────────────────
 CSV_FILES = [
     r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\0_data_preprocessing\qqb_dataset\qqb_train.csv",
     r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage\0_data_preprocessing\qqb_dataset\qqb_val.csv",
@@ -51,7 +50,6 @@ def convert_file(mat_path: Path) -> bool:
 def main():
     all_paths = []
 
-    # Collect all unique .mat paths from both CSVs
     for csv_path in CSV_FILES:
         df = pd.read_csv(csv_path)
         all_paths.extend(df["path"].tolist())
@@ -81,7 +79,6 @@ def main():
             else:
                 skipped += 1
 
-            # Progress update every 100 files
             if i % 100 == 0 or i == total:
                 print(f"  Progress: {i}/{total} "
                       f"(converted: {converted}, skipped: {skipped}, errors: {errors})")

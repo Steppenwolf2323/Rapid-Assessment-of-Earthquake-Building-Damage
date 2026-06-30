@@ -37,7 +37,6 @@ _IMAGENET_MEAN = [0.485, 0.456, 0.406]
 _IMAGENET_STD  = [0.229, 0.224, 0.225]
 
 
-# ── Shadow mask generation ────────────────────────────────────────────────────
 
 def generate_shadow_mask(
     img_np:            np.ndarray,
@@ -60,34 +59,25 @@ def generate_shadow_mask(
     Returns:
         mask: np.ndarray of shape (H, W), float32, values in [0, 1]
     """
-    # Step 1: Grayscale
     gray = cv2.cvtColor(img_np, cv2.COLOR_RGB2GRAY)
 
-    # Step 2: CLAHE
     clahe = cv2.createCLAHE(
         clipLimit   = clahe_clip_limit,
         tileGridSize = clahe_tile_grid,
     )
     enhanced = clahe.apply(gray)
 
-    # Step 3: Otsu thresholding — shadows are dark, so we invert
-    # THRESH_BINARY_INV marks dark pixels (shadows) as white (255)
     _, raw_mask = cv2.threshold(
         enhanced, 0, 255,
         cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU,
     )
 
-    # Step 4: Morphological opening (erosion then dilation)
-    # Removes thin noise bridges and isolated noise pixels
     kernel  = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
     opened  = cv2.morphologyEx(raw_mask, cv2.MORPH_OPEN,  kernel, iterations=1)
 
-    # Step 5: Morphological closing (dilation then erosion)
-    # Fills small holes inside genuine shadow regions
+    
     cleaned = cv2.morphologyEx(opened,   cv2.MORPH_CLOSE, kernel, iterations=1)
 
-    # Step 6: Remove connected components smaller than min_component_px
-    # This eliminates dark noise blobs that survived morphological cleaning
     num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(
         cleaned, connectivity=8
     )
@@ -97,12 +87,11 @@ def generate_shadow_mask(
         if area >= min_component_px:
             filtered[labels == label_idx] = 255
 
-    # Step 7: Normalise to [0, 1]
     mask = filtered.astype(np.float32) / 255.0
     return mask
 
 
-# ── Dataset ───────────────────────────────────────────────────────────────────
+# Dataset 
 
 class QQBDatasetB(Dataset):
     """
@@ -149,10 +138,8 @@ class QQBDatasetB(Dataset):
               f"(intact: {n_intact}, damaged: {n_damaged}, "
               f"ratio: {n_intact / max(n_damaged, 1):.1f}:1)")
 
-        # ── Spatial augmentation transforms (applied to PIL before masking) ──
         self.spatial_aug = self._build_spatial_aug(split, augment_cfg or {})
 
-        # ── Colour augmentation (applied to PIL after spatial aug) ───────────
         self.colour_aug = self._build_colour_aug(split, augment_cfg or {})
 
     def _build_spatial_aug(self, split: str, cfg: dict):
@@ -208,29 +195,23 @@ class QQBDatasetB(Dataset):
     def __getitem__(self, idx: int) -> tuple:
         img_path, label = self.samples[idx]
 
-        # ── Load image ───────────────────────────────────────────────────────
         npy_path = Path(img_path).with_suffix(".npy")
         img_np   = np.load(npy_path)                          # (H, W, 3) uint8
         img_pil  = Image.fromarray(img_np, mode="RGB")
 
-        # ── Resize (always, both splits) ─────────────────────────────────────
         img_pil = transforms.Resize((self.image_size, self.image_size))(img_pil)
 
-        # ── Spatial augmentation (training only) ─────────────────────────────
         if self.spatial_aug is not None:
             img_pil = self.spatial_aug(img_pil)
 
-        # ── Generate shadow mask from the (possibly augmented) RGB image ─────
-        # Must happen AFTER spatial augmentation so mask geometry matches image
-        img_np_aug = np.array(img_pil)                        # (H, W, 3) uint8
+        img_np_aug = np.array(img_pil)                        
         mask = generate_shadow_mask(
             img_np_aug,
             clahe_clip_limit = self.clahe_clip_limit,
             clahe_tile_grid  = self.clahe_tile_grid,
             min_component_px = self.min_component_px,
-        )                                                     # (H, W) float32
+        )                                                     
 
-        # ── Colour augmentation on RGB only (training only) ──────────────────
         if self.colour_aug is not None:
             img_pil = self.colour_aug(img_pil)
 
@@ -245,7 +226,7 @@ class QQBDatasetB(Dataset):
 
         return image_4ch, torch.tensor(label, dtype=torch.float32)
 
-    # ── Class imbalance weights ───────────────────────────────────────────────
+    # Class imbalance weights 
     def get_sample_weights(self) -> torch.Tensor:
         labels    = [lbl for _, lbl in self.samples]
         n_intact  = labels.count(0)
