@@ -31,7 +31,6 @@ import pandas as pd
 from shapely.wkt import loads as wkt_loads
 
 
-# ─── Paths ────────────────────────────────────────────────────────────────────
 BASE = Path(r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage")
 
 XBD_CSV        = BASE / "0_data_preprocessing" / "xbd_dataset" / "xbd_test_buildings.csv"
@@ -46,8 +45,6 @@ def main():
     print(f"Loaded {len(df)} buildings from CSV.")
     print(f"Extracting centroids from scene JSON files...\n")
 
-    # Cache: scene_path → {uid: (cx, cy)}
-    # Load each scene JSON only once
     scene_cache = {}
 
     rows        = []
@@ -58,7 +55,6 @@ def main():
         uid        = Path(row["path"]).stem
         scene_path = Path(row["scene_path"])
 
-        # Load scene JSON (cached)
         scene_key = str(scene_path)
         if scene_key not in scene_cache:
             json_path = scene_path.parent.parent / "labels" / \
@@ -111,7 +107,6 @@ def main():
             print(f"  Progress: {n_found + n_missing}/{len(df)} "
                   f"(found: {n_found}, missing: {n_missing})")
 
-    # Save
     df_out = pd.DataFrame(rows)
     df_out.to_csv(OUTPUT_CENTROIDS, index=False)
 

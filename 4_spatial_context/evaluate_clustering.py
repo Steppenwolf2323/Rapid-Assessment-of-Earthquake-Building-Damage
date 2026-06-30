@@ -37,7 +37,6 @@ from clustering_models import (
 )
 
 
-# ─── Paths ────────────────────────────────────────────────────────────────────
 BASE = Path(r"C:\Users\zanca\OneDrive\Desktop\Vrij Unversiteit\extra_year\Thesis\Rapid Assessment of Earthquake Building Damage")
 
 EVAL_PATHS = {
@@ -55,7 +54,6 @@ GSD_M_PER_PX = 2.65   # metres per pixel for xBD Mexico earthquake
 # Radii to test (pixels)
 RADII_PX = [50, 100, 150, 200, 300]
 
-# Homogeneity thresholds to test
 HOMOGENEITY_THRESHOLDS = [round(t, 2) for t in np.arange(0.05, 0.55, 0.05)]
 
 
@@ -79,7 +77,7 @@ def evaluate_model(model_id: str, eval_path: Path, uid_to_data: dict) -> dict:
           f"(damaged: {sum(labels)}, intact: {len(labels)-sum(labels)})")
     print(f"  Best threshold from evaluation: {best_threshold}")
 
-    # Baseline
+    # 
     baseline = compute_metrics(labels, preds, probs)
     print(f"\n  Baseline (no clustering):")
     print(f"    F1={baseline['f1']}  Recall={baseline['recall']}  "
@@ -141,7 +139,6 @@ def evaluate_model(model_id: str, eval_path: Path, uid_to_data: dict) -> dict:
             "threshold_results":  threshold_results,
         })
 
-    # Overall best across all radii and thresholds
     best_overall = max(
         radius_results,
         key=lambda r: r["best_f1"]
@@ -189,7 +186,6 @@ def main():
         if result:
             all_results[model_id] = result
 
-    # Summary
     print(f"\n{'='*60}")
     print("Summary: best result per model")
     print(f"{'='*60}")
